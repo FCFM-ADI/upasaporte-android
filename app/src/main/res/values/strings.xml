@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Demo UPasaporte</string>
+    <string name="default_title">Checking credentials</string>
+    <string name="pasaporte_not_configured">You need a service name and a redirect URL to be configured in UPasaporteActivity to try this demo</string>
 </resources>
