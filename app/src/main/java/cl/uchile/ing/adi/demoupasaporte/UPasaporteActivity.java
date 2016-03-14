@@ -46,7 +46,8 @@ public class UPasaporteActivity extends AppCompatActivity {
                     sanitizer.parseUrl(url);
                     String alias = sanitizer.getValue("alias");
                     String img = sanitizer.getValue("img");
-                    User user = new User(alias, img);
+                    String sessId = sanitizer.getValue("PHPSESSID");
+                    User user = new User(alias, img, sessId);
 
                     Intent i = new Intent();
                     i.putExtra("user", user);

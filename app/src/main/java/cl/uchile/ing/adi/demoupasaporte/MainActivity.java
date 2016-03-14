@@ -19,12 +19,15 @@ public class MainActivity extends AppCompatActivity {
     private User user;
     private TextView userName;
     private ImageView userImage;
+    private TextView userSessId;
 
     @Override protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         this.userName = (TextView) this.findViewById(R.id.username);
         this.userImage = (ImageView) this.findViewById(R.id.userimage);
+        this.userSessId = (TextView) this.findViewById(R.id.sess_id);
+
     }
 
     @Override protected void onStart() {
@@ -43,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void populateView(){
         this.userName.setText(user.getAlias());
+        this.userSessId.setText(user.getSessId());
         new AsyncTask<User, Void, Bitmap>(){
             @Override protected Bitmap doInBackground(User... params) {
                 Bitmap img = null;
